@@ -16,10 +16,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@gh-workflow
-      - uses: r-lib/actions/setup-r@v1
-      with:
-        r-version: '4.0.0' # The R version to download (if necessary) and use.
-        target_branch: 'gh-workflow'         # Default is gh-pages for github provider
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v1
+        with:
+          r-version: 'release'
+          target_branch: 'gh-workflow'         # Default is gh-pages for github provider
 
     env:
       RENV_PATHS_ROOT: ~/.local/share/renv
