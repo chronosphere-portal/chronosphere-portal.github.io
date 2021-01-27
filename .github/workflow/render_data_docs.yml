@@ -1,0 +1,38 @@
+name: Render documentation for data
+
+on:
+  push:
+    branches:
+      - gh-workflow
+
+jobs:
+  render:
+    name: Render Rmarkdown files
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@gh-workflow
+      - uses: r-lib/actions/setup-r@v1
+      with:
+        r-version: '4.0.0' # The R version to download (if necessary) and use.
+        target_branch: 'gh-workflow'         # Default is gh-pages for github provider
+
+    env:
+      RENV_PATHS_ROOT: ~/.local/share/renv
+    steps:
+      - name: Cache packages
+        uses: actions/cache@v1
+      with:
+        path: ${{ env.RENV_PATHS_ROOT }}
+        key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-renv-
+
+      - name: Restore packages
+          shell: Rscript {0}
+          run: |
+            if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
+            renv::restore()
+            Rscript scripts/generate_docs.R
