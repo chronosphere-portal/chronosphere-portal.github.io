@@ -14,7 +14,7 @@ jobs:
       RENV_PATHS_ROOT: ~/.local/share/renv
 
     steps:
-      - uses: actions/checkout@gh-workflow
+      - uses: actions/checkout@v2
 
       - name: Setup R
         uses: r-lib/actions/setup-r@v1
