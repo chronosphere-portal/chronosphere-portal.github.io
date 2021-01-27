@@ -1,33 +1,35 @@
 ---
-title: Paleobiology Database (pbdb)
-permalink: /docs/pbdb/
+title: Paleobiology Database
+permalink: "/docs/pbdb/"
 ---
-The Paleobiology Database is a public database of paleontological data that anyone can use, maintained by an international non-governmental group of paleontologists.
 
+*description will go here*
 
 ### Available variables 
 
-occs - Raw species occurrences
+occs
 
-The dataset downloaded from [here](https://paleobiodb.org/).
+The dataset can be downloaded from [here](https://paleobiodb.org/){target="_blank"}.
 
-Access the raw species occurrences variable ("occs") of the "pbdb" dataset with a `fetch()` function:
+Access the Official release variable (**occs**) of the (**pbdb**) dataset with a `fetch()` function:
+	
 
-```{r}
- spec <- fetch("pbdb", "occs")
 
+```r
+ctdb <- fetch(dat = pbdb)
 ```
+
 #### Additional arguments
 
 The argument `dir` represents the path to temporary directory. 
 
 The argument `verbose` (logical) determines should feedback be output to the console?
+	
 
-```{r}
-spec <- fetch(dat = "pbdb", var = "occs", dir, verbose=FALSE)
 
+```r
+ctdb <- fetch(dat = pbdb, var = occs, dir, verbose=FALSE)
 ```
-
 
 #### Resolution 
 
@@ -35,26 +37,17 @@ species
 
 #### Archive size
 
-pbdb_occs_20191122_species: 79.6 MB
+pbdb_occs_20210126_species.zip: 81.7 MiB
 
-pbdb_occs_20200217_species: 80.8 MB
+#### Version
 
-#### Versions
-
-20191122
-
-20200217
-
-20200623 
-
-
+20210126
 
 #### Licence
 
-
-[CC-BY](https://opendefinition.org/licenses/cc-by/)
-
+CC-BY
 
 ### Reference
+Please remember to acknowledge the Paleobiology Database (http://paleobiodb.org) in your publication.
 
-The Paleobiology Database [www.paleobiodb.org](URL: https://paleobiodb.org//)
+*This page was automatically generated*

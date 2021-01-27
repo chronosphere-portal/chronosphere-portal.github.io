@@ -1,30 +1,34 @@
 ---
-title: J.J. Sepkoski's compendium (sepkoski)
-permalink: /docs/sepkoski/
+title: J.J. Sepkoski's compendium 
+permalink: "/docs/sepkoski/"
 ---
-The purpose of this database is to allow users to easily search and summarize Sepkoski's global genus compendium on the basis of Evolutionary Fauna, Phylum, or Class. You can recover customized lists of genera and their stratigraphic ranges (according to Sepkoski) as well as summaries of genus richness and taxonomic rates of evolution. 
+
+*description will go here*
 
 ### Available variables 
 
-genera - Startigraphic ranges of marine genera.
+genera
 
-The dataset downloaded from [here](http://strata.geology.wisc.edu/jack/).
+The dataset can be downloaded from [here](http://strata.geology.wisc.edu/jack/){target="_blank"}.
 
-Access the stratigraphic ranges of marine genera variable ("genera") of the "sepkoski" dataset with a `fetch()` function:
+Access the Official release variable (**genera**) of the (**sepkoski**) dataset with a `fetch()` function:
+	
 
-```{r}
- margen <- fetch("sepkoski", "genera")
 
+```r
+ctdb <- fetch(dat = sepkoski)
 ```
+
 #### Additional arguments
 
 The argument `dir` represents the path to temporary directory. 
 
 The argument `verbose` (logical) determines should feedback be output to the console?
+	
 
-```{r}
-margen <- fetch(dat = "sepkoski", var = "genera", dir, verbose=FALSE)
 
+```r
+ctdb <- fetch(dat = sepkoski, var = genera, dir, verbose=FALSE)
 ```
 
 #### Resolution 
@@ -33,7 +37,7 @@ none
 
 #### Archive size
 
-sepkoski_genera_2002_kiessling: 2.71 MB
+sepkoski_genera_2002_kiessling.zip: 394.6 KiB
 
 #### Version
 
@@ -41,18 +45,9 @@ sepkoski_genera_2002_kiessling: 2.71 MB
 
 #### Licence
 
-Not specified 
-
+not specified
 
 ### Reference
+Sepkoski, J. J., Jablonski, D. & Foote, M. (2002). Sepkoski’s Genus Compendium—Editors Introduction & Timescale. no.363 (2002). 
 
-Sepkoski, J. J., Jablonski, D. & Foote, M. (2002). A compendium of fossil marine genera. Bulletins of American Paleontology (363)
-
-[www.strata.geology.wisc.edu/jack](URL:http://strata.geology.wisc.edu/jack/)
-
-
-
-
-
-
-
+*This page was automatically generated*
