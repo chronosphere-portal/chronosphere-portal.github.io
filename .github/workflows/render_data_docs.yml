@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GH_TOKEN }}
+      RENV_PATHS_ROOT: ~/.local/share/renv
 
     steps:
       - uses: actions/checkout@gh-workflow
@@ -22,9 +23,6 @@ jobs:
         with:
           r-version: 'release'
           target_branch: 'gh-workflow'         # Default is gh-pages for github provider
-
-    env:
-      RENV_PATHS_ROOT: ~/.local/share/renv
 
     steps:
       - name: Cache packages
