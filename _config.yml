@@ -30,6 +30,8 @@ exclude:
   - .idea/
   - .gitignore
   - README.md
+  - scripts/
+  
 timezone: Europe/Berlin
 defaults:
 - scope:
