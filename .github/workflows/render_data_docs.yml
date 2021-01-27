@@ -36,8 +36,9 @@ jobs:
             ${{ runner.os }}-renv-
 
       - name: Restore packages
-          shell: Rscript {0}
           run: |
             if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
             renv::restore()
-            Rscript scripts/generate_docs.R
+          shell: Rscript {0}
+
+          run: Rscript scripts/generate_docs.R
