@@ -1,0 +1,11 @@
+params:
+  dat: "dataset_name"
+  var: "variable_name"
+  vars: "all_variables"
+  res: "none"
+  archive_name: "test.zip"
+  archive_size: "0 bytes"
+  ver: "1.0"
+  url: "/"
+  licence: "CC"
+  citation: "NA"

@@ -1,0 +1,48 @@
+---
+title: Sample Title
+permalink: "/docs/perma__link/"
+output: 
+  html_document:
+    keep_md: true
+---
+
+*description will go here*
+
+### Available variables 
+
+`r params$vars`
+
+The dataset can be downloaded from [here](`r params$url`){target="_blank"}.
+
+Access the Official release variable (`r paste0("**", params$var, "**")`) of the (`r paste0("**", params$dat, "**")`) dataset with a `fetch()` function:
+	
+fetch_function_01
+
+#### Additional arguments
+
+The argument `dir` represents the path to temporary directory. 
+
+The argument `verbose` (logical) determines should feedback be output to the console?
+	
+fetch_function_02
+
+#### Resolution 
+
+`r params$res`
+
+#### Archive size
+
+`r params$archive_name`: `r params$archive_size`
+
+#### Version
+
+`r params$ver`
+
+#### Licence
+
+`r params$licence`
+
+### Reference
+`r params$citation`
+
+*This page was automatically generated*
