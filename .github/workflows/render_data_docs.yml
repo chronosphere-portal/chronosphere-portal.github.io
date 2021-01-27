@@ -21,10 +21,10 @@ jobs:
 
       - name: Setup R & Pandoc
         uses: r-lib/actions/setup-r@v1
-        uses: r-lib/actions/setup-pandoc@v1
         with:
           r-version: 'release'
           target_branch: 'gh-workflow'         # Default is gh-pages for github provider
+      - uses: r-lib/actions/setup-pandoc@v1
 
       - name: Cache packages
         uses: actions/cache@v2
