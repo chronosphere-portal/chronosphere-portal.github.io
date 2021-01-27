@@ -19,8 +19,9 @@ jobs:
         run: |
           sudo apt-get install libcurl4-openssl-dev
 
-      - name: Setup R
+      - name: Setup R & Pandoc
         uses: r-lib/actions/setup-r@v1
+        uses: r-lib/actions/setup-pandoc@v1
         with:
           r-version: 'release'
           target_branch: 'gh-workflow'         # Default is gh-pages for github provider
