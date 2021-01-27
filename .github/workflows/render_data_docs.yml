@@ -24,7 +24,6 @@ jobs:
           r-version: 'release'
           target_branch: 'gh-workflow'         # Default is gh-pages for github provider
 
-    steps:
       - name: Cache packages
         uses: actions/cache@v2
         with:
